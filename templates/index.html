@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block body %}
+<div class="container">
+  
+   <form method="POST" action="{% url 'result' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="gre_score" class="form-label">GRE Score</label>
+        <input  required type="number" min="1" max="340" class="form-control" id="gre_score" name="gre_score" placeholder="GRE Score (Eg. 320)">
+    </div>
+    <div class="mb-3">
+        <label for="toefl" class="form-label">TOEFL Score</label>
+        <input  required type="number" min="1" max="120" class="form-control" id="toefl" name="toefl" placeholder="TOEFL Score (Eg. 110)">
+    </div>
+    <div class="mb-3">
+        <label for="university_rating" class="form-label">University Rating</label>
+        <select required  id="university_rating" name="university_rating" class="form-select" aria-label="Default select example">
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10">10</option>
+          </select>
+    </div>
+    <div class="mb-3">
+        <label for="cgpa" class="form-label">CGPA</label>
+        <input type="number"  required  min="0.1" max="10" class="form-control" id="cgpa" step=".01" name="cgpa" placeholder="CGPA Score (Eg. 9.2)">
+    </div>
+    
+        <button type="submit" style="background-color:#17252a;color:#feffff" class="btn btn-success">Submit Data</button>
+   </form>
+    
+</div>
+{% endblock body %}

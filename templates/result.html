@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Result
+{% endblock title %}
+{% block body %}
+<div class="container_result">
+    <div class="title">
+        Your Chance of Admission :
+    </div>
+    <div class="title">
+       <h3> {{result}} %</h3>
+    </div>
+    <form >
+    <button type="submit" onclick="history.back()" style="width:100%;background-color:#17252a;color:#feffff" class="btn btn-success">Back</a></form>
+</div>
+{% endblock body %}
